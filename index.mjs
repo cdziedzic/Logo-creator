@@ -2,6 +2,7 @@ import inquirer from 'inquirer'
 import fs from 'fs/promises'
 import MaxLengthInputPrompt from 'inquirer-maxlength-input-prompt'
 inquirer.registerPrompt('maxlength-input', MaxLengthInputPrompt)
+import Shape from './lib/shapes.mjs'
 import Triangle from './lib/shapes.mjs'
 import Circle  from './lib/shapes.mjs'
 import Square  from './lib/shapes.mjs'
@@ -54,17 +55,18 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
     }
     
 
-// let template = `
-// <svg version="1.1"
-//      width="300" height="200"
-//      xmlns="http://www.w3.org/2000/svg">
+let template = `
+<svg version="1.1"
+     width="300" height="200"
+     xmlns="http://www.w3.org/2000/svg">
 
-//   <rect width="100%" height="100%" fill="White" />
+  <rect width="100%" height="100%" fill="White" />
+  
 
-//   <text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
+  <text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
 
-// </svg>`
+</svg>`
 
 
-// fs.writeFile('logo.svg', template)
+fs.writeFile('logo.svg', template)
 
