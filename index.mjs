@@ -39,7 +39,7 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
 
     if (selectedShape === 'Square') {
         logo = new Square (
-            `${text}`, `${shapeColor}`, `${textColor}`,`<rect x="75" y="20" width="150" height="150" fill="${shapeColor}" />`)
+            `${text}`, `${shapeColor}`, `${textColor}`,`<rect x="75" y="27" width="150" height="150" fill="${shapeColor}" />`)
             
             fs.writeFile('logo.svg', logo.render())
         
@@ -54,7 +54,7 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
 
     else {
         logo = new Circle (
-            `${text}`, `${shapeColor}`, `${textColor}`, `<circle cx="150" cy="100" r="80" fill="${shapeColor}" />`)
+            `${text}`, `${shapeColor}`, `${textColor}`, `<circle cx="150" cy="107" r="80" fill="${shapeColor}" />`)
             fs.writeFile('logo.svg', logo.render())
     }
 // let test = new Circle( `${text}`, `${shapeColor}`, `${textColor}`, `"<circle cx="150" cy="100" r="80" fill="${shapeColor}>"`)
