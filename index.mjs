@@ -38,19 +38,19 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
 
     if (selectedShape === Square) {
         const logo = new Square(
-            `${text}, ${shapeColor}, ${textColor}, svgCode`
+            `${text}, ${shapeColor}, ${textColor},'<rect x="75" y="20" width="150" height="150" fill="${shapeColor}'>`
         )
     }
 
     if (selectedShape === Triangle) {
         const logo = new Triangle (
-            `${text}, ${shapeColor}, ${textColor}, svgCode`
+            `${text}, ${shapeColor}, ${textColor}, '<polygon points="150, 18 244, 182 56, 182" fill="${shapeColor}'`
         )
     }
 
     else {
         const logo = new Circle (
-            `${text}, ${shapeColor}, ${textColor}, svgCode`
+            `${text}, ${shapeColor}, ${textColor}, "<circle cx="150" cy="100" r="80" fill="${shapeColor}" />`
         )
     }
     
@@ -60,7 +60,9 @@ let template = `
      width="300" height="200"
      xmlns="http://www.w3.org/2000/svg">
 
-  <rect width="100%" height="100%" fill="White" />
+  <rect width="100%" height="100%" fill="White">
+
+  ${logo.svgCode}
   
 
   <text x="150" y="125" font-size="60" text-anchor="middle" fill="${textColor}">${text}</text>
@@ -69,4 +71,5 @@ let template = `
 
 
 fs.writeFile('logo.svg', template)
+console.log('Generated logo.svg')
 
