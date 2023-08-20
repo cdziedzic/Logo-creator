@@ -8,6 +8,8 @@ import Circle  from './lib/shapes.mjs'
 import Square  from './lib/shapes.mjs'
 let logo;
 
+
+// Prompt user for parameters of their logo design
 let {text, textColor, selectedShape, shapeColor} = await inquirer
     .prompt ([
         {
@@ -36,7 +38,7 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
     
     ])
     
-
+// Check user selected shape and render the new object into logo.svg
     if (selectedShape === 'Square') {
         logo = new Square (
             `${text}`, `${shapeColor}`, `${textColor}`,`<rect x="75" y="27" width="150" height="150" fill="${shapeColor}" />`)
@@ -57,8 +59,7 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
             `${text}`, `${shapeColor}`, `${textColor}`, `<circle cx="150" cy="107" r="80" fill="${shapeColor}" />`)
             fs.writeFile('logo.svg', logo.render())
     }
-// let test = new Circle( `${text}`, `${shapeColor}`, `${textColor}`, `"<circle cx="150" cy="100" r="80" fill="${shapeColor}>"`)
-// test.getStuff()
-// console.log(test.render())
+
+    //write confirm message
 console.log('Generated logo.svg')
 
