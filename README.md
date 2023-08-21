@@ -3,6 +3,9 @@
 ## Project Description
 An app to generate a professional company logo. The user may enter up to 3 text characters and choose the text color, the type of shape, and the color fill of the shape. The logo will then be printed to the logo.svg file. 
 
+
+https://github.com/cdziedzic/Logo-creator
+
 A sample svg image can be seen as sample.svg
 
 Preview video: 

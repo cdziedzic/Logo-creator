@@ -38,7 +38,7 @@ let {text, textColor, selectedShape, shapeColor} = await inquirer
     
     ])
     
-// Check user selected shape and render the new object into logo.svg
+// Check user selected shape and render the new object. Write code into logo.svg
     if (selectedShape === 'Square') {
         logo = new Square (
             `${text}`, `${shapeColor}`, `${textColor}`,`<rect x="75" y="27" width="150" height="150" fill="${shapeColor}" />`)
